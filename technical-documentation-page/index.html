@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Technical Documentation</title>
+  <style>
+    /* Reset and base styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f4f4f9;
+    }
+
+    /* Navbar styles - Fixed to the left edge */
+    #navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 280px;
+      height: 100vh;
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      overflow-y: auto;
+      padding: 20px;
+      border-right: 2px solid #34495e;
+      z-index: 1000;
+    }
+
+    #navbar header {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #7f8c8d;
+      text-align: center;
+      color: #fff;
+    }
+
+    #navbar .nav-link {
+      display: block;
+      color: #bdc3c7;
+      text-decoration: none;
+      padding: 12px 15px;
+      margin-bottom: 5px;
+      border-radius: 4px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    #navbar .nav-link:hover {
+      background-color: #34495e;
+      color: #fff;
+    }
+
+    /* Main content styles */
+    #main-doc {
+      margin-left: 280px;
+      padding: 40px;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .main-section {
+      background-color: #fff;
+      padding: 30px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .main-section header {
+      font-size: 2rem;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+    }
+
+    .main-section p {
+      margin-bottom: 15px;
+    }
+
+    .main-section ul {
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+
+    .main-section li {
+      margin-bottom: 8px;
+    }
+
+    .main-section code {
+      display: block;
+      background-color: #2d2d2d;
+      color: #f8f8f2;
+      padding: 15px;
+      border-radius: 4px;
+      font-family: 'Courier New', Courier, monospace;
+      margin-bottom: 15px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+
+    /* Media query for responsive design */
+    @media (max-width: 768px) {
+      #navbar {
+        width: 220px;
+      }
+      
+      #main-doc {
+        margin-left: 220px;
+        padding: 20px;
+      }
+      
+      .main-section header {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav id="navbar">
+    <header>Python Documentation</header>
+    <a class="nav-link" href="#Introduction">Introduction</a>
+    <a class="nav-link" href="#Variables_and_Data_Types">Variables and Data Types</a>
+    <a class="nav-link" href="#Control_Flow">Control Flow</a>
+    <a class="nav-link" href="#Functions">Functions</a>
+    <a class="nav-link" href="#Modules_and_Packages">Modules and Packages</a>
+  </nav>
+
+  <!-- Main Documentation Content -->
+  <main id="main-doc">
+    
+    <section class="main-section" id="Introduction">
+      <header>Introduction</header>
+      <p>Python is a high-level, interpreted programming language known for its readability and simplicity.</p>
+      <p>It supports multiple programming paradigms, including procedural, object-oriented, and functional programming.</p>
+      <p>Python is widely used in web development, data science, artificial intelligence, and automation.</p>
+      <code>print("Hello, World!")</code>
+    </section>
+
+    <section class="main-section" id="Variables_and_Data_Types">
+      <header>Variables and Data Types</header>
+      <p>Variables in Python are used to store data values. Unlike other languages, Python has no command for declaring a variable.</p>
+      <p>Python has several built-in data types, including integers, floats, strings, and booleans.</p>
+      <ul>
+        <li>Integers: Whole numbers, e.g., <code>42</code></li>
+        <li>Floats: Decimal numbers, e.g., <code>3.14</code></li>
+        <li>Strings: Text data, e.g., <code>"Python"</code></li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Control_Flow">
+      <header>Control Flow</header>
+      <p>Control flow statements allow you to control the execution of your program based on certain conditions.</p>
+      <p>The <code>if</code> statement is used for conditional execution.</p>
+      <ul>
+        <li><code>if</code> statement</li>
+        <li><code>for</code> loop</li>
+        <li><code>while</code> loop</li>
+      </ul>
+      <code>
+if x > 0:
+    print("Positive")
+      </code>
+    </section>
+
+    <section class="main-section" id="Functions">
+      <header>Functions</header>
+      <p>A function is a block of organized, reusable code that is used to perform a single, related action.</p>
+      <p>Functions provide better modularity for your application and a high degree of code reusing.</p>
+      <code>
+def greet(name):
+    return f"Hello, {name}!"
+      </code>
+    </section>
+
+    <section class="main-section" id="Modules_and_Packages">
+      <header>Modules and Packages</header>
+      <p>A module is a file containing Python definitions and statements.</p>
+      <p>Packages are a way of structuring Python’s module namespace by using “dotted module names”.</p>
+      <code>import math</code>
+      <p>The <code>math</code> module provides access to mathematical functions.</p>
+    </section>
+
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Book Inventory</title>
+<style>
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #f5f1e8;
+    padding: 30px 20px;
+    color: #3a2e1f;
+    margin: 0;
+  }
+
+  h1 {
+    text-align: center;
+    color: #5c3a21;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+  }
+
+  table {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    box-shadow: 0 6px 18px rgba(92, 58, 33, 0.2);
+    background: #fff8e7;
+  }
+
+  th, td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid #d4c5a9;
+  }
+
+  thead th {
+    background: #6b4226;
+    color: #fff8e7;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  /* Test 27: Set the display property of each span element to inline-block */
+  span {
+    display: inline-block;
+  }
+
+  /* Tests 21, 22: Target rows with class "read" */
+  tr[class="read"] {
+    background-image: linear-gradient(to right, #d4edda, #c3e6cb);
+  }
+
+  /* Tests 23, 24: Target rows with class "to-read" */
+  tr[class="to-read"] {
+    background-image: linear-gradient(to right, #f8d7da, #f5c6cb);
+  }
+
+  /* Tests 25, 26: Target rows with class "in-progress" */
+  tr[class="in-progress"] {
+    background-image: linear-gradient(to right, #fff3cd, #ffeeba);
+  }
+
+  /* Tests 28, 29, 30: Status spans inside to-read rows */
+  tr[class="to-read"] span[class="status"] {
+    border: 2px solid #721c24;
+    background-image: linear-gradient(to right, #f8d7da, #f5c6cb);
+  }
+
+  /* Tests 31, 32, 33: Status spans inside read rows */
+  tr[class="read"] span[class="status"] {
+    border: 2px solid #155724;
+    background-image: linear-gradient(to right, #d4edda, #c3e6cb);
+  }
+
+  /* Tests 34, 35, 36: Status spans inside in-progress rows */
+  tr[class="in-progress"] span[class="status"] {
+    border: 2px solid #856404;
+    background-image: linear-gradient(to right, #fff3cd, #ffeeba);
+  }
+
+  /* Tests 37, 38, 39, 40: Status spans and rate spans (class starting with "rate") */
+  span[class="status"],
+  span[class^="rate"] {
+    height: 24px;
+    width: 100px;
+    padding: 4px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 4px;
+    color: #3a2e1f;
+  }
+
+  /* Tests 41-47: Direct children of rate spans */
+  span[class^="rate"] > span {
+    border: 1px solid #333;
+    border-radius: 50%;
+    margin: 2px;
+    height: 12px;
+    width: 12px;
+    background-color: #ccc;
+  }
+
+  /* Tests 48, 49: First descendant of spans with the word "one" in class */
+  /* Using ~= ensures it matches the exact word "one", not substrings like "stone" */
+  span[class~="one"] span:first-child {
+    background-image: linear-gradient(to right, #ffcc00, #ff9900);
+  }
+
+  /* Tests 50, 51: First two descendants of spans with the word "two" in class */
+  span[class~="two"] span:nth-child(-n+2) {
+    background-image: linear-gradient(to right, #ffcc00, #ff9900);
+  }
+
+  /* Tests 52, 53: All descendant spans of spans with the word "three" in class */
+  span[class~="three"] span {
+    background-image: linear-gradient(to right, #ffcc00, #ff9900);
+  }
+</style>
+</head>
+<body>
+  <h1>Book Inventory</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Category</th>
+        <th>Status</th>
+        <th>Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="read">
+        <td>The Great Gatsby</td>
+        <td>F. Scott Fitzgerald</td>
+        <td>Classic</td>
+        <td><span class="status">Read</span></td>
+        <td><span class="rate three"><span></span><span></span><span></span></span></td>
+      </tr>
+      <tr class="to-read">
+        <td>Dune</td>
+        <td>Frank Herbert</td>
+        <td>Sci-Fi</td>
+        <td><span class="status">To Read</span></td>
+        <td><span class="rate"><span></span><span></span><span></span></span></td>
+      </tr>
+      <tr class="in-progress">
+        <td>The Hobbit</td>
+        <td>J.R.R. Tolkien</td>
+        <td>Fantasy</td>
+        <td><span class="status">In Progress</span></td>
+        <td><span class="rate"><span></span><span></span><span></span></span></td>
+      </tr>
+      <tr class="read">
+        <td>1984</td>
+        <td>George Orwell</td>
+        <td>Dystopian</td>
+        <td><span class="status">Read</span></td>
+        <td><span class="rate two"><span></span><span></span><span></span></span></td>
+      </tr>
+      <tr class="in-progress">
+        <td>Project Hail Mary</td>
+        <td>Andy Weir</td>
+        <td>Sci-Fi</td>
+        <td><span class="status">In Progress</span></td>
+        <td><span class="rate"><span></span><span></span><span></span></span></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

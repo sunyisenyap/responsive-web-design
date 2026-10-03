@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <style>
+        /* Sedikit CSS agar formulir terlihat rapi dan punya gaya personal */
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f9; }
+        form { max-width: 500px; margin: auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        label { display: block; margin-top: 15px; font-weight: bold; }
+        input, select, textarea, button { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+        input[type="radio"], input[type="checkbox"] { width: auto; margin-right: 8px; }
+        button { background-color: #4CAF50; color: white; border: none; cursor: pointer; margin-top: 20px; font-size: 16px; }
+        button:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+
+    <h1 id="title">Developer Survey Form</h1>
+    <p id="description">Thank you for taking the time to help us improve our platform!</p>
+    
+    <form id="survey-form">
+        <!-- Name Input -->
+        <label id="name-label">Name</label>
+        <input id="name" type="text" required placeholder="Enter your name">
+        
+        <!-- Email Input -->
+        <label id="email-label">Email</label>
+        <input id="email" type="email" required placeholder="Enter your email">
+        
+        <!-- Number Input -->
+        <label id="number-label">Age</label>
+        <input id="number" type="number" min="10" max="100" placeholder="Enter your age">
+        
+        <!-- Dropdown -->
+        <label>Which option best describes your current role?</label>
+        <select id="dropdown">
+            <option value="student">Student</option>
+            <option value="professional">Professional</option>
+        </select>
+        
+        <!-- Radio Buttons -->
+        <p>Would you recommend this platform to a friend?</p>
+        <label><input type="radio" name="recommend" value="yes"> Yes</label>
+        <label><input type="radio" name="recommend" value="no"> No</label>
+        
+        <!-- Checkboxes -->
+        <p>What are your favorite programming languages?</p>
+        <label><input type="checkbox" value="python"> Python</label>
+        <label><input type="checkbox" value="javascript"> JavaScript</label>
+        <label><input type="checkbox" value="rust"> Rust</label>
+        
+        <!-- Textarea -->
+        <label>Any comments or suggestions?</label>
+        <textarea placeholder="Enter your comments here..."></textarea>
+        
+        <!-- Submit Button -->
+        <button id="submit" type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
